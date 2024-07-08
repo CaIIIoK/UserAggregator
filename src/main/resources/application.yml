@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: user-aggregator
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+data-sources:
+  dataSources:
+    - name: data-base-1
+      strategy: postgres
+      url: jdbc:postgresql://localhost:5432/db1
+      user: postgres
+      password: testpass
+      table: users
+      mapping:
+        id: user_id
+        username: login
+        name: first_name
+        surname: last_name
+    - name: data-base-2
+      strategy: postgres
+      url: jdbc:postgresql://localhost:5432/db2
+      user: postgres
+      password: testpass
+      table: users
+      mapping:
+        id: user_id
+        username: login
+        name: first_name
+        surname: last_name
+    - name: data-base-3
+      strategy: mysql
+      url: jdbc:mysql://localhost:3306/db3
+      user: root
+      password: admin123
+      table: user_table
+      mapping:
+        id: oauth_login
+        username: us_name
+        name: fname
+        surname: sname
